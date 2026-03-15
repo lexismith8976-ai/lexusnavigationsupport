@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Link, useNavigate } from 'react-router-dom';
+// ❌ Link hata diya - use nahi ho raha
+// ❌ useNavigate hata diya - use nahi ho raha
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import FloatingAI from '../components/FloatingAI';
@@ -11,7 +12,7 @@ import {
 } from '@heroicons/react/24/outline';
 
 const Navigation: React.FC = () => {
-  const navigate = useNavigate();
+  // ❌ navigate hata diya - use nahi ho raha
   const [selectedDest, setSelectedDest] = useState('Lexus Tower');
   const [isNavigating, setIsNavigating] = useState(false);
 
@@ -168,4 +169,3 @@ const Navigation: React.FC = () => {
 };
 
 export default Navigation;
-

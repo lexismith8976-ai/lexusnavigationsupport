@@ -1,18 +1,19 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link, useNavigate } from 'react-router-dom';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import FloatingAI from '../components/FloatingAI';
+// ❌ Link hata diya - use nahi ho raha
+// ❌ useNavigate hata diya - use nahi ho raha
 import { 
   ChatBubbleLeftRightIcon,
   ComputerDesktopIcon,
   CpuChipIcon,
   WifiIcon
 } from '@heroicons/react/24/outline';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import FloatingAI from '../components/FloatingAI';
 
 const Specs: React.FC = () => {
-  const navigate = useNavigate();
+  // ❌ navigate hata diya - use nahi ho raha
 
   const specifications = [
     {
@@ -157,4 +158,3 @@ const Specs: React.FC = () => {
 };
 
 export default Specs;
-

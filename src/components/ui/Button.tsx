@@ -6,6 +6,7 @@ interface ButtonProps {
   variant?: 'primary' | 'secondary' | 'outline';
   size?: 'sm' | 'md' | 'lg';
   onClick?: () => void;
+  disabled?: boolean;
   className?: string;
 }
 
@@ -14,14 +15,15 @@ export const Button: React.FC<ButtonProps> = ({
   variant = 'primary',
   size = 'md',
   onClick,
+  disabled = false,
   className = '',
 }) => {
   const baseStyles = 'rounded-full font-semibold transition-all duration-300 inline-flex items-center justify-center';
   
   const variants = {
-    primary: 'bg-gradient-to-r from-lexus-gold to-lexus-darkGold text-black hover:shadow-lg hover:shadow-lexus-gold/30',
-    secondary: 'bg-lexus-gray text-white hover:bg-lexus-black border border-lexus-gold/30',
-    outline: 'bg-transparent border-2 border-lexus-gold text-lexus-gold hover:bg-lexus-gold hover:text-black',
+    primary: 'bg-gradient-to-r from-[#D4AF37] to-[#996515] text-white hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed',
+    secondary: 'bg-gray-900 text-white hover:bg-gray-800 border border-[#D4AF37]/30 disabled:opacity-50 disabled:cursor-not-allowed',
+    outline: 'bg-transparent border-2 border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37]/10 disabled:opacity-50 disabled:cursor-not-allowed',
   };
 
   const sizes = {
@@ -32,10 +34,11 @@ export const Button: React.FC<ButtonProps> = ({
 
   return (
     <motion.button
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
+      whileHover={!disabled ? { scale: 1.05 } : {}}
+      whileTap={!disabled ? { scale: 0.95 } : {}}
       className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`}
       onClick={onClick}
+      disabled={disabled}
     >
       {children}
     </motion.button>

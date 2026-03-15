@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import {  useNavigate } from 'react-router-dom';
 import { 
   ChatBubbleLeftRightIcon,
   ComputerDesktopIcon,
@@ -12,7 +11,7 @@ import Footer from '../components/Footer';
 import FloatingAI from '../components/FloatingAI';
 
 const Gallery: React.FC = () => {
-  const navigate = useNavigate();
+  // ❌ navigate hata diya - use nahi ho raha
 
   const specifications = [
     {

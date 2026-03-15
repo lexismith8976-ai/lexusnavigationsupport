@@ -1,16 +1,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import FloatingAI from '../components/FloatingAI';
+// ❌ Navbar hata diya - use nahi ho raha
+// ❌ Footer hata diya - use nahi ho raha
+// ❌ FloatingAI hata diya - use nahi ho raha
 import { 
   ChatBubbleLeftRightIcon,
   HomeIcon,
-  CheckIcon,
-  BoltIcon,
-  DevicePhoneMobileIcon,
-  GlobeAltIcon
+  CheckIcon
+  // ❌ BoltIcon hata diya
+  // ❌ DevicePhoneMobileIcon hata diya
+  // ❌ GlobeAltIcon hata diya
 } from '@heroicons/react/24/outline';
 
 const Pricing: React.FC = () => {
@@ -77,9 +77,7 @@ const Pricing: React.FC = () => {
   ];
 
   const handleBuy = (planName: string) => {
-    // Here you would integrate with your payment system
     alert(`Thank you for choosing ${planName} plan! You'll be redirected to checkout.`);
-    // window.location.href = 'https://getchatsupport.live/';
   };
 
   return (
