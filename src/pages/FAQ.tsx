@@ -11,9 +11,7 @@ import {
   Bars3Icon,
   XMarkIcon,
   MagnifyingGlassIcon,
-  EnvelopeIcon,
-  PhoneIcon,
-  MapPinIcon
+  EnvelopeIcon
 } from '@heroicons/react/24/outline';
 import FloatingAI from '../components/FloatingAI';
 

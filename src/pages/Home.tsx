@@ -141,9 +141,9 @@ const Navbar: React.FC = () => {
 
   const navItems = [
     { label: 'Home', path: '/', type: 'route' },
-    { label: 'Features', path: 'features', type: 'hash' },
-    { label: 'Navigation', path: 'navigation', type: 'hash' },
-    { label: 'Specs', path: 'specs', type: 'hash' },
+    { label: 'Features', path: '/features', type: 'route' },
+    { label: 'Navigation', path: '/navigation', type: 'route' },
+    { label: 'Specs', path: '/specs', type: 'route' },
     { label: 'Gallery', path: '/gallery', type: 'route' },
     { label: 'Pricing', path: '/pricing', type: 'route' },
     { label: 'FAQ', path: '/faq', type: 'route' },
@@ -151,17 +151,7 @@ const Navbar: React.FC = () => {
 
   const handleNavigation = (item: { label: string; path: string; type: string }) => {
     setIsOpen(false);
-    
-    if (item.type === 'route') {
-      // Regular page navigation
-      navigate(item.path);
-    } else {
-      // Hash scroll on home page
-      const element = document.getElementById(item.path);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
+    navigate(item.path);
   };
 
   return (
@@ -207,7 +197,6 @@ const Navbar: React.FC = () => {
 
           {/* Right Side Buttons */}
           <div className="hidden lg:flex items-center space-x-3">
-            {/* Ask AI Button */}
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -218,7 +207,6 @@ const Navbar: React.FC = () => {
               <span className="text-sm font-medium">Ask AI</span>
             </motion.button>
 
-            {/* Login/Signup Button */}
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -230,7 +218,6 @@ const Navbar: React.FC = () => {
             </motion.button>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="lg:hidden text-white p-2 bg-[#D4AF37]/10 rounded-lg border border-[#D4AF37]/30"
@@ -239,7 +226,6 @@ const Navbar: React.FC = () => {
           </button>
         </div>
 
-        {/* Mobile Menu */}
         <AnimatePresence>
           {isOpen && (
             <motion.div
@@ -259,7 +245,6 @@ const Navbar: React.FC = () => {
                   </button>
                 ))}
                 
-                {/* Mobile Ask AI */}
                 <button
                   onClick={() => window.open('https://getchatsupport.live/', '_blank')}
                   className="w-full flex items-center justify-center space-x-2 py-3 bg-[#D4AF37]/10 border border-[#D4AF37]/30 rounded-lg text-[#D4AF37]"
@@ -268,7 +253,6 @@ const Navbar: React.FC = () => {
                   <span>Ask AI Assistant</span>
                 </button>
 
-                {/* Mobile Login */}
                 <button
                   onClick={() => {
                     navigate('/login');
@@ -307,7 +291,6 @@ const Hero: React.FC = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      {/* Animated Background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-black">
           <motion.div 
@@ -324,7 +307,6 @@ const Hero: React.FC = () => {
           />
         </div>
         
-        {/* Grid Overlay */}
         <div className="absolute inset-0 opacity-30">
           <div className="w-full h-full" style={{
             backgroundImage: 'linear-gradient(rgba(212, 175, 55, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(212, 175, 55, 0.1) 1px, transparent 1px)',
@@ -335,13 +317,11 @@ const Hero: React.FC = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            {/* Live Badge */}
             <motion.div
               animate={{ y: [0, -3, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
@@ -388,7 +368,6 @@ const Hero: React.FC = () => {
               transition={{ delay: 0.3 }}
               className="flex flex-wrap gap-3"
             >
-              {/* Start Your Journey Button */}
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -403,7 +382,6 @@ const Hero: React.FC = () => {
                 />
               </motion.button>
               
-              {/* Watch Demo Button */}
               <motion.a
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -416,7 +394,6 @@ const Hero: React.FC = () => {
               </motion.a>
             </motion.div>
 
-            {/* Stats */}
             <motion.div 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -440,7 +417,6 @@ const Hero: React.FC = () => {
             </motion.div>
           </motion.div>
 
-          {/* Right Content - 3D Navigation Visual */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -448,7 +424,6 @@ const Hero: React.FC = () => {
             className="relative"
           >
             <div className="relative w-full aspect-square">
-              {/* Animated Rings */}
               {[0, 1, 2, 3].map((i) => (
                 <motion.div
                   key={i}
@@ -464,7 +439,6 @@ const Hero: React.FC = () => {
                 </motion.div>
               ))}
 
-              {/* Center Core */}
               <motion.div
                 animate={{ scale: [1, 1.05, 1] }}
                 transition={{ duration: 3, repeat: Infinity }}
@@ -494,7 +468,6 @@ const Hero: React.FC = () => {
                 </div>
               </motion.div>
 
-              {/* Floating Elements */}
               {[
                 { icon: '📍', label: 'Destination', x: 70, y: 30, delay: 0 },
                 { icon: '🚗', label: 'You', x: 30, y: 70, delay: 0.5 },
@@ -517,7 +490,6 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
       <motion.div
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 1.5, repeat: Infinity }}
@@ -535,9 +507,10 @@ const Hero: React.FC = () => {
   );
 };
 
-// Features Component
+// Features Component - FIXED
 const FeaturesSection: React.FC = () => {
   const [hoveredFeature, setHoveredFeature] = useState<string | null>(null);
+  const navigate = useNavigate();
 
   return (
     <section id="features" className="py-24 bg-gradient-to-b from-black to-gray-900">
@@ -595,13 +568,12 @@ const FeaturesSection: React.FC = () => {
                   {feature.stats}
                 </span>
                 
-                <motion.a
-                  href="#"
-                  whileHover={{ x: 3 }}
-                  className="text-[#D4AF37] text-sm group-hover:text-white transition-colors"
+                <button
+                  onClick={() => navigate('/features')}
+                  className="text-[#D4AF37] text-sm hover:text-white transition-colors flex items-center"
                 >
                   Learn More →
-                </motion.a>
+                </button>
               </div>
             </motion.div>
           ))}
@@ -638,7 +610,6 @@ const NavigationSection: React.FC = () => {
         </motion.div>
 
         <div className="grid lg:grid-cols-3 gap-6">
-          {/* Search Panel */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -700,7 +671,6 @@ const NavigationSection: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* Map Display */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}

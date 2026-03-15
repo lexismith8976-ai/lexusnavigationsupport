@@ -4,15 +4,10 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import FloatingAI from '../components/FloatingAI';
 import { 
-  SparklesIcon, 
   MapIcon, 
-  ArrowPathIcon, 
   DevicePhoneMobileIcon, 
   BellAlertIcon, 
   GlobeAltIcon,
-  ShieldCheckIcon,
-  ComputerDesktopIcon,
-  UserGroupIcon,
   ChatBubbleLeftRightIcon
 } from '@heroicons/react/24/outline';
 
